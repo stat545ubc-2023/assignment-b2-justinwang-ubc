@@ -27,6 +27,7 @@
 #' `data` except `group`.
 #'
 #' @export
+#'
 #' @examples
 #' count_all_missing_by_group(airquality, Month)
 #'
