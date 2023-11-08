@@ -16,7 +16,7 @@ You can install the development version of GroupCount from
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("stat545ubc-2023/groupSummarize")
+devtools::install_github("stat545ubc-2023/groupCountMiss")
 ```
 
 ## Examples

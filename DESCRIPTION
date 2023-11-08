@@ -1,6 +1,6 @@
 Package: GroupCount
 Title: Make Counting Missng Values for all columns by group more easily 
-Version: 0.1.0
+Version: 1.0.0
 Authors@R: 
     person("yi", "wang", , "yiwang02@student.ubc.ca", role = c("aut", "cre"))
 Description: Convenience functions to count missing valurs for all columns by group.

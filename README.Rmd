@@ -16,9 +16,10 @@ knitr::opts_chunk$set(
 # GroupCount
 
 <!-- badges: start -->
+
 <!-- badges: end -->
 
-The goal of GroupCount is to ...
+The goal of GroupCount is to count missing values for all columns by group
 
 ## Installation
 
@@ -26,30 +27,26 @@ You can install the development version of GroupCount from [GitHub](https://gith
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("stat545ubc-2023/groupSummarize")
+devtools::install_github("stat545ubc-2023/groupCountMiss")
 ```
 
-## Example
+## Examples
 
-This is a basic example which shows you how to solve a common problem:
+This example computes the number of missing values in the `airquality` dataset grouped by the `cyl` column.
 
-```{r example}
+```{r}
 library(GroupCount)
-## basic example code
+count_all_missing_by_group(airquality, Month)
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+This example has the same output as the last example, but shows off an alternative way of invoking the `count_all_missing_by_group()`: piping the dataset into the function.
 
-```{r cars}
-summary(cars)
+```{r}
+airquality |> count_all_missing_by_group(Month) 
 ```
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this.
+The optional `.groups` argument allows us to keep the output grouped by the grouping column. See example below; notice how the output is a grouped tibble, rather than the ungrouped tibble output of the earlier examples.
 
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-plot(pressure)
+```{r}
+count_all_missing_by_group(airquality, Month, .groups = "keep")
 ```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
